@@ -9,11 +9,11 @@ class Book:
         self.publisher = publisher
         self.publish_year = publish_year
         self._ISBN = ISBN
-        self.is_borrowed = is_borrowed
+        self.__is_borrowed = is_borrowed
         self.borrowing_history = []
 
     def update_borrwing_history(self, borrower):
-        self.borrowing_history.append({'Title' : self.title, 'ISBN' : self._ISBN, 'Borrower' : borrower, 'Date' : time.asctime()}) #FIXME:
+        self.borrowing_history.append({'Title' : self.title, 'ISBN' : self._ISBN, 'Borrower' : borrower, 'Date' : time.asctime()})
 
     def clear_borrowing_history(self):
         self.borrowing_history.clear()
@@ -27,3 +27,7 @@ class Book:
         print(f"Publish Year: {self.publish_year}")
         print(f"Is borrowed: {self.is_borrowed}")
         print(f"Borrowing history: {self.borrowing_history}")
+
+    @property
+    def is_borrowed(self):
+        return self.__is_borrowed
