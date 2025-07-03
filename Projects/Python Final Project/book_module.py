@@ -28,6 +28,8 @@ class Book:
         print(f"Is borrowed: {self.is_borrowed}")
         print(f"Borrowing history: {self.borrowing_history}")
 
-    @property
-    def is_borrowed(self):
+    def get_is_borrowed(self):
         return self.__is_borrowed
+    
+    def set_is_borrowed(self, val):
+        self.__is_borrowed = val

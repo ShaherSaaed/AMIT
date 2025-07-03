@@ -17,7 +17,7 @@ class Library:
                 self.available_books.append(book)
                 print(f"Added book: {book.title} to the shelves.")
 
-    def remove_books(self, *books):
+    def remove_books(self, books):
         for book in books:
             if book not in self.available_books:
                 print(f"{book.title} is not available, please add it first.")

@@ -14,11 +14,9 @@ def display_menu(role):
     if role == "Admin":
         print("1. Add Books to Library")
         print("2. Remove Books from Library")
-        print("3. Add Members")
-        print("4. Remove Members")
-        print("5. View All Books")
-        print("6. View All Members")
-        print("7. Exit")
+        print("3. View All Books")
+        print("4. View All Members")
+        print("5. Exit")
     else:  # Member
         print("1. Borrow Books")
         print("2. Return Books")
@@ -73,7 +71,7 @@ def main():
             
             while True:
                 display_menu(role)
-                choice = input("Enter your choice (1-7): ")
+                choice = input("Enter your choice (1-5): ")
                 
                 if choice == "1":
                     # Add Books
@@ -87,7 +85,7 @@ def main():
                     new_book = Book(title, author, genre, publisher, publish_year, False, isbn)
                     admin.add_books_to_library(library, new_book)
                     
-                elif choice == "2":
+                elif choice == "2": #FIXME:
                     # Remove Books
                     print("\nAvailable Books:")
                     for i, book in enumerate(library.available_books, 1):
@@ -101,36 +99,8 @@ def main():
                             print("Invalid book number!")
                     except ValueError:
                         print("Please enter a valid number!")
-                
+              
                 elif choice == "3":
-                    # Add Members
-                    first_name = input("Enter member's first name: ")
-                    last_name = input("Enter member's last name: ")
-                    age = int(input("Enter member's age: "))
-                    
-                    new_member = Member(first_name, last_name, age)
-                    library.add_members(new_member)
-                
-                elif choice == "4":
-                    # Remove Members
-                    if not library.members:
-                        print("No members registered!")
-                        continue
-                        
-                    print("\nRegistered Members:")
-                    for i, member in enumerate(library.members, 1):
-                        print(f"{i}. {member.first_name} {member.last_name}")
-                    
-                    try:
-                        member_num = int(input("Enter member number to remove: ")) - 1
-                        if 0 <= member_num < len(library.members):
-                            library.remove_members(library.members[member_num])
-                        else:
-                            print("Invalid member number!")
-                    except ValueError:
-                        print("Please enter a valid number!")
-                
-                elif choice == "5":
                     # View All Books
                     print("\nAll Books in Library:")
                     print("-"*50)
@@ -142,7 +112,7 @@ def main():
                         print(f"{i}. {book.title} by {book.author}")
                         print(f"   ISBN: {book._ISBN}, Available: {not book.is_borrowed}")
                 
-                elif choice == "6":
+                elif choice == "4":
                     # View All Members
                     print("\nRegistered Members:")
                     print("-"*50)
@@ -150,7 +120,7 @@ def main():
                         print(f"{i}. {member.first_name} {member.last_name}")
                         print(f"   Age: {member.age}, ID: {member.get_id()}")
                 
-                elif choice == "7":
+                elif choice == "5":
                     print("Logging out as Admin...")
                     break
                 
@@ -187,7 +157,7 @@ def main():
                 
                 if choice == "1":
                     # Borrow Books
-                    available_books = [b for b in library.available_books if not b.is_borrowed]
+                    available_books = [b for b in library.available_books if not b.get_is_borrowed()]
                     if not available_books:
                         print("No books available for borrowing!")
                         continue
@@ -252,7 +222,7 @@ def main():
                 
                 elif choice == "4":
                     # View All Available Books
-                    available_books = [b for b in library.available_books if not b.is_borrowed]
+                    available_books = [b for b in library.available_books if not b.get_is_borrowed()]
                     if not available_books:
                         print("No books available at the moment!")
                     else:
