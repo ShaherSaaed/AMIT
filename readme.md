@@ -25,25 +25,32 @@ These sessions were conducted as verbal explanations and discussions, without ac
 
 Clone the repository:
 
+```
 git clone https://github.com/<your-username>/<repo-name>.git
-
+```
 
 Navigate to the repository:
 
+```
 cd <repo-name>
+```
 
 
 Install dependencies (recommended to use a virtual environment):
 
+```
 pip install -r requirements.txt
+```
 
 
 Launch Jupyter Notebook:
 
+```
 jupyter notebook
+```
 
 🏫 About AMIT
 
-AMIT
+[AMIT](https://www.amit-learning.com)
  is a training academy that provides practical courses in data science, AI, software development, and more.
 This repository serves as a supporting resource for learners enrolled in the Machine Learning track.
