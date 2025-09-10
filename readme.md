@@ -26,13 +26,13 @@ These sessions were conducted as verbal explanations and discussions, without ac
 Clone the repository:
 
 ```
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/ShaherSaaed/AMIT.git
 ```
 
 Navigate to the repository:
 
 ```
-cd <repo-name>
+cd AMIT
 ```
 
 
