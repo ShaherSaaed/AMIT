@@ -10,3 +10,4 @@ tensorflow
 scipy
 keras
 imblearn
+opencv-python
