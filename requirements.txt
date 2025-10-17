@@ -1,13 +1,33 @@
-pandas
-numpy
-jupyter
-scikit-learn
-matplotlib
-seaborn
-folium
-plotly
-tensorflow
-scipy
-keras
-imblearn
-opencv-python
+# Core data & ML stack
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.2
+scipy==1.14.1
+matplotlib==3.9.2
+seaborn==0.13.2
+plotly==5.24.1
+folium==0.17.0
+
+# Deep learning with AMD GPU (ROCm support)
+# tensorflow-rocm==2.17.0
+tensorflow==2.17.0
+keras==3.6.0
+
+# Data imbalance handling
+imbalanced-learn==0.12.3
+
+# Image processing
+opencv-python==4.10.0.84
+
+# NLP
+nltk==3.9.1
+
+# Interactive environment
+jupyter==1.1.1
+jupyterlab==4.3.1
+notebook==7.2.2
+jupyter_contrib_nbextensions==0.7.0
+
+# Optional but recommended utilities
+ipykernel==6.29.5
+ipywidgets==8.1.3
